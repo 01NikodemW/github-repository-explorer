@@ -1,21 +1,16 @@
-import { useTranslation } from "react-i18next";
 import { FC } from "react";
 import { Box, Typography } from "@mui/material";
 import { Repository } from "@/types/repository";
 import StarIcon from "@mui/icons-material/Star";
+import { RepositoryContainer } from "./styles";
 
-const RepositoryItem: FC<{
+type RepositoryItemProps = {
   repository: Repository;
-}> = ({ repository }) => {
-  const { t } = useTranslation();
+};
 
+const RepositoryItem: FC<RepositoryItemProps> = ({ repository }) => {
   return (
-    <Box
-      sx={{
-        backgroundColor: "#e0e0e0",
-        padding: "12px",
-      }}
-    >
+    <RepositoryContainer>
       <Box
         sx={{
           display: "flex",
@@ -41,7 +36,7 @@ const RepositoryItem: FC<{
         </Box>
       </Box>
       <Typography>{repository.description}</Typography>
-    </Box>
+    </RepositoryContainer>
   );
 };
 

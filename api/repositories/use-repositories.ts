@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { queryKeys } from "@/api/query-keys";
 import { axiosInstance } from "@/api/axios-instance";
-import { useEffect, useState } from "react";
 import { Repository } from "@/types/repository";
 
 export async function getUserRepositories(

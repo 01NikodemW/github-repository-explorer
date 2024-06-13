@@ -24,6 +24,7 @@ export const SearchSectionWrapper = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const StyledTextField = styled(TextField)(({ theme }) => ({
+export const StyledTextField = styled(TextField)(() => ({
   width: "100%",
+  backgroundColor: "#f2f2f2",
 }));

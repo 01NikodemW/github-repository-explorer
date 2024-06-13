@@ -1,27 +1,32 @@
-import { Box, TextField, styled } from "@mui/material";
+import { rem } from "@/utils/px-to-rem";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Skeleton,
+  styled,
+} from "@mui/material";
 
-export const CardContainer = styled(Box)(({ theme }) => ({
-  padding: "16px",
-  backgroundColor: "#fff",
-  width: "900px",
-
-  [theme.breakpoints.down("tablet")]: {
-    width: "100%",
-    marginLeft: "16px",
-    marginRight: "16px",
-  },
+export const StyledAccordion = styled(Accordion)(() => ({
+  marginBottom: "16px",
+  boxShadow: "none",
 }));
 
-export const SearchSectionWrapper = styled(Box)(({ theme }) => ({
-  display: "flex",
-  gap: "16px",
-
-  [theme.breakpoints.down("tablet")]: {
-    flexDirection: "column",
-    gap: "8px",
-  },
+export const StyledAccordionSummary = styled(AccordionSummary)(() => ({
+  backgroundColor: "#f2f2f2",
+  fontSize: rem(20),
+  fontWeight: "bold",
 }));
 
-export const StyledTextField = styled(TextField)(({ theme }) => ({
+export const StyledAccordionDetails = styled(AccordionDetails)(() => ({
+  padding: 0,
+  paddingLeft: "16px",
+  marginTop: "16px",
+  overflow: "auto",
+  maxHeight: "300px",
+}));
+
+export const RepositoryLoaderSkeleton = styled(Skeleton)(() => ({
   width: "100%",
+  height: "56px",
 }));
