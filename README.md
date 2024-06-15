@@ -1,40 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Todo app
 
-## Getting Started
+## Uruchomienie programu
 
-First, run the development server:
+<!-- ### Backend -->
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1.  Vercel
+    Projekt został zdeployowany na platformie Vercel, link do strony: https://github-repository-explorer-phi.vercel.app/
+
+    Wchodząc pod adres
+
+2.  Uruchomienie lokalne
+
+    Na wstępie należy zainstalować zależności
+
+    ```sh
+    npm i
+    ```
+
+    Następnie należy zbudować projekt
+
+    ```sh
+    npm run build
+    ```
+
+    oraz uruchomić aplikację
+
+    ```sh
+    npm start
+    ```
+
+
+# Proces tworzenia
+
+Moją pracę rozpocząłem od przeanalizowania wymagań i doboru technologii jakich będę używał do tworzenia aplikacji. W kolejnej części przeszedłem do zakodowania połączenia z API. W tym celu wygenerowałem token, który będzie przesyłany w każdym zapytani i umieściłem go wraz z URLem w pliku .env. Do kontaktu z API wykorzystałem takie biblioteki @tanstack/react-query i axios żeby zapewnić dobrą organizację kodu, zarządzanie stanem poprzez przechowywanie wyników zapytań w pamięci cache przeglądarki (stąd brak wykorzystania MobX czy Redux) oraz wygodę z korzystania. Każdy routing opakowany został w customowy hook który zwraca dane wraz z informacją czy są pobierane z bazy albo umożliwiający wykonanie zadania separując cały kod odpowiedzialny za kontakt z api od kodu odpowiedzialnego za tworzenie UI aplikacji.
+
+Następnie przeszedłem do tworzenia widoków, gdzie zaimplementowałem UI zgodnie przygotowanym designem. Uznałem go za wzór w kontekście ustawienia elemnetów i dostosowałem je pod widoki mobile i webowe. Zadbałem responsywność aplikacji na wszystkich typach urządzeń. Po zakodowaniu UI połączyłem utworzone wcześniej hooki to kontaktu z API. Zadbałem również o obsługę braku występowania danych oraz ich ładowania poprzez wyświetlanie odpowiednich komunikatów i elemntów ładnowania.
+
+W ramach dodatkowych funkcji dodałem za pomocą narzędzia react-i18next obsługę języka angielskie i polskiego. W prawym górny znajduję się przycisk, po którego kliknęciu zmienia się język aplikacji. Dodałem również pokazowe zarządzanie stanem poprzez przechowywanie języka i jego ustawień wykorzystując useContext.
+
+Po utworzeniu aplikacji wykorzytując narzędzie Cypress utworzyłem testy e2e wszystkich funkcjonalności aplikacji, testy uruchamiane są poleceniem
+
+```sh
+npm run e2e-tests
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
