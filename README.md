@@ -7,8 +7,6 @@
 1.  Vercel
     Projekt został zdeployowany na platformie Vercel, link do strony: https://github-repository-explorer-phi.vercel.app/
 
-    Wchodząc pod adres
-
 2.  Uruchomienie lokalne
 
     Na wstępie należy zainstalować zależności
@@ -28,7 +26,6 @@
     ```sh
     npm start
     ```
-
 
 # Proces tworzenia
 
