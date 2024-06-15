@@ -1,8 +1,18 @@
 import Head from "next/head";
 import Card from "@/components/main-page/card";
-import { StyledContainer } from "@/components/ready-to-use/styles";
+import {
+  StyledContainer,
+  StyledLanguageButton,
+} from "@/components/ready-to-use/styles";
+import i18n from "@/i18";
+import { useState } from "react";
 
 export default function Home() {
+  const [language, setLanguage] = useState<string>(i18n.language);
+  const handleLanguageChange = (): void => {
+    i18n.changeLanguage(i18n.language === "en" ? "pl" : "en");
+    setLanguage(i18n.language);
+  };
   return (
     <>
       <Head>
@@ -11,7 +21,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <StyledContainer>
+        <StyledLanguageButton
+          onClick={handleLanguageChange}
+          variant="contained"
+        >
+          {language}
+        </StyledLanguageButton>
         <Card />
       </StyledContainer>
     </>

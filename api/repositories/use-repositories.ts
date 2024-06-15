@@ -11,6 +11,7 @@ export async function getUserRepositories(
   const response = await axiosInstance.get(url, {
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
     },
   });
 

@@ -9,6 +9,7 @@ import {
   StyledAccordionDetails,
   StyledAccordionSummary,
 } from "./styles";
+import NoRepositoryFoundItem from "./no-repository-found-item";
 
 type UserAccordionProps = {
   user: User;
@@ -39,17 +40,19 @@ const UserAccordion: FC<UserAccordionProps> = ({
         expandIcon={<ExpandMoreIcon />}
         aria-controls="user-repository"
         id="user-repository"
-        onChange={onAccordionClickHandler}
+        onClick={onAccordionClickHandler}
       >
         {user.login}
       </StyledAccordionSummary>
       <StyledAccordionDetails>
         {isUserRepositoriesFetching ? (
           <RepositoryLoaderSkeleton variant="rounded" />
-        ) : (
+        ) : !isUserRepositoriesFetching && userRepositories.length > 0 ? (
           userRepositories.map((repo) => (
             <RepositoryItem key={repo.id} repository={repo} />
           ))
+        ) : (
+          <NoRepositoryFoundItem />
         )}
       </StyledAccordionDetails>
     </StyledAccordion>

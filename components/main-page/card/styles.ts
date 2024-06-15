@@ -1,4 +1,4 @@
-import { Box, TextField, styled } from "@mui/material";
+import { Box, Button, TextField, styled } from "@mui/material";
 
 export const CardContainer = styled(Box)(({ theme }) => ({
   padding: "16px",
@@ -10,6 +10,8 @@ export const CardContainer = styled(Box)(({ theme }) => ({
     width: "100%",
     marginLeft: "16px",
     marginRight: "16px",
+    height: "auto",
+    minHeight: "600px",
   },
 }));
 
@@ -27,4 +29,8 @@ export const SearchSectionWrapper = styled(Box)(({ theme }) => ({
 export const StyledTextField = styled(TextField)(() => ({
   width: "100%",
   backgroundColor: "#f2f2f2",
+}));
+
+export const StyledButton = styled(Button)(() => ({
+  backgroundColor: "#2c9cdb",
 }));

@@ -1,11 +1,17 @@
 import { Button, Skeleton } from "@mui/material";
-import { CardContainer, SearchSectionWrapper, StyledTextField } from "./styles";
+import {
+  CardContainer,
+  SearchSectionWrapper,
+  StyledButton,
+  StyledTextField,
+} from "./styles";
 import { useTranslation } from "react-i18next";
 import { useRef, useState } from "react";
 import { useUsers } from "@/api/users/use-users";
 import { User } from "@/types/user";
 import UserAccordion from "./user-accordion";
 import UserLoaderSkeleton from "./user-loader-skeleton";
+import NoUserFound from "./no-user-found";
 
 const Card = () => {
   const { t } = useTranslation();
@@ -19,6 +25,7 @@ const Card = () => {
     e.preventDefault();
     const value = inputRef.current?.value;
     setSearchValue(value || "");
+    setExpandedAccordionIndex(-1);
   };
 
   return (
@@ -30,14 +37,14 @@ const Card = () => {
             variant="outlined"
             inputRef={inputRef}
           />
-          <Button variant="contained" type="submit">
+          <StyledButton variant="contained" type="submit">
             {t("Search")}
-          </Button>
+          </StyledButton>
         </SearchSectionWrapper>
       </form>
       {isUsersFetching ? (
         <UserLoaderSkeleton />
-      ) : (
+      ) : !isUsersFetching && users.length > 0 ? (
         users.map((user: User, index) => (
           <UserAccordion
             key={user.id}
@@ -47,7 +54,9 @@ const Card = () => {
             setExpandedAccordionIndex={setExpandedAccordionIndex}
           />
         ))
-      )}
+      ) : searchValue ? (
+        <NoUserFound searchValue={searchValue} />
+      ) : null}
     </CardContainer>
   );
 };

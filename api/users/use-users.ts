@@ -14,6 +14,7 @@ export async function getUsers(searchValue: string): Promise<User[]> {
   const response = await axiosInstance.get(url, {
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
     },
   });
 

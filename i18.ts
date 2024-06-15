@@ -9,6 +9,8 @@ const resources = {
     translation: {
       Search: "Szukaj",
       "Enter username": "Wprowadź nazwę użytkownika",
+      "No repositories": "Brak repozytoriów",
+      "No users found for": "Nie znaleziono użytkowników dla",
     },
   },
 };
@@ -16,7 +18,7 @@ const resources = {
 i18n.use(initReactI18next).init({
   resources,
   lng: "pl",
-  fallbackLng: "pl",
+  fallbackLng: "en",
   interpolation: {
     escapeValue: false,
   },
