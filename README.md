@@ -9,7 +9,7 @@
 
 2.  Uruchomienie lokalne
 
-    Na wstępie należy ustawić odpowiednie zmienne środowiskowe w plik .env i zainstalować zależności
+    Na wstępie należy ustawić odpowiednie zmienne środowiskowe w pliku .env i zainstalować zależności
 
     ```sh
     npm i
