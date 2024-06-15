@@ -1,4 +1,4 @@
-import { Button, Skeleton } from "@mui/material";
+import { Button, Skeleton, Typography } from "@mui/material";
 import {
   CardContainer,
   SearchSectionWrapper,
@@ -47,6 +47,11 @@ const Card = () => {
           </StyledButton>
         </SearchSectionWrapper>
       </form>
+      {searchValue && (
+        <Typography sx={{ marginBottom: "12px", color: "#262626" }}>
+          {t("Showing users for") + ` "${searchValue}"`}
+        </Typography>
+      )}
       {isUsersFetching ? (
         <UserLoaderSkeleton />
       ) : !isUsersFetching && users.length > 0 ? (

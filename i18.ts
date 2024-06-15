@@ -11,6 +11,7 @@ const resources = {
       "Enter username": "Wprowadź nazwę użytkownika",
       "No repositories": "Brak repozytoriów",
       "No users found for": "Nie znaleziono użytkowników dla",
+      "Showing users for": "Pokazywanie użytkowników dla",
     },
   },
 };
