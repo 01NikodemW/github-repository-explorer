@@ -10,7 +10,7 @@ type RepositoryItemProps = {
 
 const RepositoryItem: FC<RepositoryItemProps> = ({ repository }) => {
   return (
-    <RepositoryContainer>
+    <RepositoryContainer data-cy="repository-item">
       <Box
         sx={{
           display: "flex",

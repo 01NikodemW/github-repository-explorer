@@ -36,8 +36,13 @@ const Card = () => {
             label={t("Enter username")}
             variant="outlined"
             inputRef={inputRef}
+            data-cy="search-input"
           />
-          <StyledButton variant="contained" type="submit">
+          <StyledButton
+            variant="contained"
+            type="submit"
+            data-cy="search-button"
+          >
             {t("Search")}
           </StyledButton>
         </SearchSectionWrapper>

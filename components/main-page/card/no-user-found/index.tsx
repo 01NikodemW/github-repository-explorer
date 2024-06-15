@@ -10,7 +10,7 @@ type NoUserFoundProps = {
 const NoUserFound: FC<NoUserFoundProps> = ({ searchValue }) => {
   const { t } = useTranslation();
   return (
-    <RepositoryContainer>
+    <RepositoryContainer data-cy="no-user-found">
       <Typography
         variant="h6"
         sx={{
