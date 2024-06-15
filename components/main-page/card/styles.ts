@@ -18,7 +18,7 @@ export const CardContainer = styled(Box)(({ theme }) => ({
 export const SearchSectionWrapper = styled(Box)(({ theme }) => ({
   display: "flex",
   gap: "16px",
-  marginBottom: "16px",
+  marginBottom: "12px",
 
   [theme.breakpoints.down("tablet")]: {
     flexDirection: "column",
@@ -29,6 +29,10 @@ export const SearchSectionWrapper = styled(Box)(({ theme }) => ({
 export const StyledTextField = styled(TextField)(() => ({
   width: "100%",
   backgroundColor: "#f2f2f2",
+
+  "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+    borderColor: "#2c9cdb",
+  },
 }));
 
 export const StyledButton = styled(Button)(() => ({

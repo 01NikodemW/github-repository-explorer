@@ -15,7 +15,7 @@ export const StyledAccordion = styled(Accordion)(() => ({
 export const StyledAccordionSummary = styled(AccordionSummary)(() => ({
   backgroundColor: "#f2f2f2",
   fontSize: rem(20),
-  fontWeight: "bold",
+
 }));
 
 export const StyledAccordionDetails = styled(AccordionDetails)(() => ({
@@ -23,7 +23,7 @@ export const StyledAccordionDetails = styled(AccordionDetails)(() => ({
   paddingLeft: "16px",
   marginTop: "16px",
   overflow: "auto",
-  maxHeight: "300px",
+  maxHeight: "250px",
 }));
 
 export const RepositoryLoaderSkeleton = styled(Skeleton)(() => ({
