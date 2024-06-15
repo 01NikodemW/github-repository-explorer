@@ -35,12 +35,16 @@ const UserAccordion: FC<UserAccordionProps> = ({
   };
 
   return (
-    <StyledAccordion expanded={orderNumber === expandedAccordionIndex}>
+    <StyledAccordion
+      expanded={orderNumber === expandedAccordionIndex}
+      data-cy="result-user-accordion"
+    >
       <StyledAccordionSummary
         expandIcon={<ExpandMoreIcon />}
         aria-controls="user-repository"
         id="user-repository"
         onClick={onAccordionClickHandler}
+        data-cy="result-user-accordion-summary"
       >
         {user.login}
       </StyledAccordionSummary>

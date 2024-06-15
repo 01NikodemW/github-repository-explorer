@@ -4,15 +4,10 @@ import {
   StyledContainer,
   StyledLanguageButton,
 } from "@/components/ready-to-use/styles";
-import i18n from "@/i18";
-import { useState } from "react";
+import { useLanguage } from "@/context/language-context";
 
 export default function Home() {
-  const [language, setLanguage] = useState<string>(i18n.language);
-  const handleLanguageChange = (): void => {
-    i18n.changeLanguage(i18n.language === "en" ? "pl" : "en");
-    setLanguage(i18n.language);
-  };
+  const { selectedLanguage, handleSetSelectedLanguage } = useLanguage();
   return (
     <>
       <Head>
@@ -24,10 +19,10 @@ export default function Home() {
 
       <StyledContainer>
         <StyledLanguageButton
-          onClick={handleLanguageChange}
+          onClick={handleSetSelectedLanguage}
           variant="contained"
         >
-          {language}
+          {selectedLanguage}
         </StyledLanguageButton>
         <Card />
       </StyledContainer>
